@@ -1,0 +1,7 @@
+.header__container{
+    display: flex;
+    background-color: aqua;
+    height: 3.5rem;
+    padding: 1rem;
+    justify-content: space-between;
+}

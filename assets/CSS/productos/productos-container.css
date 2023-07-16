@@ -1,0 +1,7 @@
+.productos__container {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 50% auto; /* Dos columnas de igual tamaño */
+  justify-content: space-between;
+  gap: 1rem;
+}

@@ -1,0 +1,9 @@
+.header__logo {
+    display: flex;
+    justify-content: center;
+    width: 6rem;
+}
+
+.logo{
+    width: 50%;
+}

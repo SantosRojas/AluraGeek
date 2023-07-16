@@ -1,0 +1,6 @@
+.nosotros__logo {
+  display: flex;
+  width: 11rem;
+  justify-content: center;
+  align-items: center;
+}
