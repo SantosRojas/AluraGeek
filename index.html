@@ -18,6 +18,7 @@
     <link rel="stylesheet" href="assets/CSS/header/header-container.css" />
     <link rel="stylesheet" href="assets/CSS/header/header-logo.css" />
     <link rel="stylesheet" href="assets/CSS/header/header-btn-login.css" />
+    <link rel="stylesheet" href="assets/CSS/header/header-busqueda.css">
     <link rel="stylesheet" href="assets/CSS/banner/banner.css" />
     <link rel="stylesheet" href="assets/CSS/banner/banner-text.css" />
     <link
@@ -40,14 +41,23 @@
   <body>
     <header>
       <div class="header__container">
-        <a href="index.html" class="header__logo">
-          <img class="logo" src="assets/images/logo.svg" alt="" />
-          <img class="logo" src="assets/images/texto.svg" alt="" />
-        </a>
+        <div class="header__logo__busqueda">
+          <a href="index.html" class="header__logo">
+            <img class="logo__icono" src="assets/images/logo.svg" alt="" />
+            <img class="logo__text" src="assets/images/texto.svg" alt="" />
+          </a>
+
+          <div class="header__cuadro__busqueda">
+            <input type="text" class="header__input" placeholder="¿Que deseas buscar?">
+            <button class="lupa"></button>
+          </div>
+        </div>
 
         <button class="header__btn__login">Login</button>
 
-        <img src="assets/images/lupa.svg" alt="busqueda" />
+        <div class="lupa__izquierda">
+          <button class="lupa"></button>
+        </div>
       </div>
     </header>
 

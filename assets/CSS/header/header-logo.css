@@ -1,9 +1,43 @@
 .header__logo {
-    display: flex;
-    justify-content: center;
-    width: 6rem;
+  display: flex;
+  width: 6.25rem;
+  justify-content: center;
+  align-items: center;
 }
 
-.logo{
-    width: 50%;
+.logo__icono {
+  width: 1.77544rem;
+  height: 1.75rem;
+  flex-shrink: 0;
+}
+
+.logo__text {
+  width: 4.47456rem;
+  height: 0.6475rem;
+  flex-shrink: 0;
+}
+
+@media screen and (min-width: 520px) {
+  .header__logo__busqueda {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+  }
+}
+
+@media screen and (min-width: 520px) {
+  .header__logo {
+    width: 11rem;
+    height: 3.125rem;
+  }
+
+  .logo__icono {
+    width: 3.12481rem;
+    height: 3.125rem;
+  }
+
+  .logo__text {
+    width: 7.87519rem;
+    height: 1.15625rem;
+  }
 }

@@ -1,16 +1,35 @@
 .header__btn__login {
+  display: flex;
+  width: 8.3125rem;
+  padding: 0.75rem 1rem;
+  justify-content: center;
+  align-items: center;
+  gap: 0.625rem;
+  border: 1px solid #2a7ae4;
+  color: #2a7ae4;
+  font-size: 0.875rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  background: transparent;
+}
+
+@media screen and (min-width: 520px) {
+  .header__btn__login {
+    width: 10.375rem;
+  }
+}
+
+@media screen and (min-width: 920px) {
+  .header__btn__login {
     display: flex;
-    width: 8.3125rem;
-    padding: 0.75rem 1rem;
+    width: 11.375rem;
+    padding: 1rem;
     justify-content: center;
     align-items: center;
     gap: 0.625rem;
-    border: 1px solid #2A7AE4;
-    color: #2A7AE4;
-    color: var(--azul-100, #2A7AE4);
-    font-size: 0.875rem;
-    font-family: Raleway;
-    font-style: normal;
-    font-weight: 600;
-    line-height: normal;
+    flex-shrink: 0;
+    font-size: 1rem;
+    font-weight: 400;
+  }
 }
