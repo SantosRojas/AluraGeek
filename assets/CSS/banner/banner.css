@@ -1,13 +1,28 @@
 .banner {
-    background-image: url("/assets/images/banner.jpg");
-    background-size:cover;
-    background-repeat: no-repeat;
-    display: flex;
-    height: 12rem;
-    padding: 1rem;
-    flex-direction: column;
-    justify-content: flex-end;
-    align-items: center;
-    gap: 1rem;
-    align-self: stretch;
+  background-image: url("/assets/images/banner.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: flex;
+  height: 12rem;
+  padding: 1rem;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 1rem;
+  align-self: stretch;
 }
+
+@media screen and (min-width: 520px) {
+  .banner {
+    height: 22rem;
+    padding: 2rem;
+  }
+}
+
+@media screen and (min-width: 920px) {
+    .banner{
+        padding: 2rem 0;
+    }
+}
+    
