@@ -5,3 +5,9 @@
   gap: 1rem;
   align-self: stretch;
 }
+
+@media screen and (min-width: 520px){
+  .nosotros__links{
+    align-items: flex-start;
+  }
+}

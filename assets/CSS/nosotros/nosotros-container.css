@@ -5,3 +5,16 @@
   gap: 1rem;
   align-self: stretch;
 }
+
+@media screen and (min-width: 520px){
+  .nosotros__container{
+    align-items: flex-start;
+  }
+}
+
+@media screen and (min-width: 920px){
+  .nosotros__container{
+    flex-direction: row;
+    gap: 7rem;
+  }
+}

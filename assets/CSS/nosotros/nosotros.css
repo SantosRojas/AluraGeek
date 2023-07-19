@@ -1,0 +1,25 @@
+.nosotros {
+  display: flex;
+  padding: 1rem;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  align-self: stretch;
+}
+
+@media screen and (min-width: 520px) {
+  .nosotros {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 2rem;
+    gap: 7.1875rem;
+  }
+}
+
+@media screen and (min-width: 920px) {
+  .nosotros {
+    padding: 4rem;
+    gap: 7.1875rem;
+  }
+}
