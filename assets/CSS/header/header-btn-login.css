@@ -12,6 +12,12 @@
   font-weight: 600;
   line-height: normal;
   background: transparent;
+  transition: all 0.5s ease-out;
+}
+
+.header__btn__login:hover{
+  cursor: pointer;
+  transform: scale(1.1);
 }
 
 @media screen and (min-width: 520px) {

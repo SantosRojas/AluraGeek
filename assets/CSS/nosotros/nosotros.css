@@ -19,7 +19,7 @@
 
 @media screen and (min-width: 920px) {
   .nosotros {
-    padding: 4rem;
+    padding: 4rem 10%;
     gap: 7.1875rem;
   }
 }

@@ -19,6 +19,7 @@
 .input {
   box-sizing: border-box;
   border-bottom: 1px solid var(--secondary-color);
+  border-radius: 7px;
   padding: 1.375rem 0.5rem 0.5rem;
   height: 3.25rem;
   width: 100%;
@@ -39,7 +40,6 @@
   top: 1.375rem;
   left: 0.5rem;
   font-size: var(--font-size-input-label);
-
   transition: all 0.25s;
 }
 
