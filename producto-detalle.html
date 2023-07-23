@@ -1,0 +1,145 @@
+<!-- <!DOCTYPE html>
+<html>
+  <head>
+    <title>Input con estilo de Google</title>
+    <style>
+      /* Estilo base para el input */
+      .google-input-container {
+        font-weight: var(--font-weigth-input);
+        position: relative;
+        margin-bottom: 1rem;
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+        justify-content: flex-end;
+        box-sizing: border-box;
+      }
+      .google-input {
+        border: 1px solid #dcdcdc;
+        border-radius: 4px;
+        padding: 10px;
+        font-size: 16px;
+        font-family: Arial, sans-serif;
+        color: #333;
+        background-color: #f9f9f9;
+        box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
+        transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+        height: 3.25rem;
+        width: 20rem; /* Puedes ajustar el ancho según tus necesidades */
+      }
+
+      /* Estilo para el borde del input cuando está enfocado */
+      .google-input:focus {
+        border-color: #4285f4;
+        outline: none;
+        box-shadow: 0 0 4px rgba(66, 133, 244, 0.6);
+      }
+
+      /* Estilo para la etiqueta flotante del input */
+      .google-input-label {
+        position: absolute;
+        top: 1.375rem;
+        left: 0.5rem;
+        font-size: 14px;
+        color: #666;
+        pointer-events: none;
+        transition: all 0.2s ease-in-out, font-size 0.2s ease-in-out;
+      }
+
+      /* Estilo para la etiqueta flotante cuando el input tiene contenido */
+      .google-input:focus ~ .google-input-label,
+      .google-input:not(:placeholder-shown) ~ .google-input-label {
+        top: 0.25rem;
+        font-size: 12px;
+        color: #4285f4;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="google-input-container">
+      <input type="text" class="google-input" id="inputName" placeholder=" " />
+      <label class="google-input-label" for="inputName">Nombre</label>
+    </div>
+
+     
+  </body>
+</html> -->
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Select con estilo de Google</title>
+  <style>
+    /* Estilo base para el select */
+    .google-select-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .google-select {
+      width: 300px; /* Puedes ajustar el ancho según tus necesidades */
+      position: relative;
+      border: 1px solid #dcdcdc;
+      border-radius: 4px;
+      padding: 10px;
+      font-size: 16px;
+      font-family: Arial, sans-serif;
+      color: #333;
+      background-color: #f9f9f9;
+      box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Estilo para la etiqueta flotante del select */
+    .google-select-label {
+      position: absolute;
+      top: 50%;
+      left: 10px;
+      transform: translateY(-50%);
+      font-size: 14px;
+      color: #666;
+      pointer-events: none;
+      transition: top 0.2s ease-in-out, font-size 0.2s ease-in-out;
+    }
+
+    /* Estilo para la etiqueta flotante cuando el select tiene un valor seleccionado */
+    .google-select:focus + .google-select-label,
+    .google-select:valid + .google-select-label {
+      top: -10px;
+      font-size: 12px;
+      color: #4285f4;
+    }
+
+    /* Estilo para centrar el formulario en la pantalla */
+    body, html {
+      height: 100%;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .form-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="form-container">
+    <div class="google-select-container">
+      <select class="google-select" id="selectOption" required>
+        <option value="" disabled selected></option>
+        <option value="option1">Opción 1</option>
+        <option value="option2">Opción 2</option>
+        <option value="option3">Opción 3</option>
+      </select>
+      <label class="google-select-label" for="selectOption">Selecciona una opción</label>
+    </div>
+
+    <!-- Agrega más selects con el mismo estilo si lo necesitas -->
+  </div>
+</body>
+</html>
+

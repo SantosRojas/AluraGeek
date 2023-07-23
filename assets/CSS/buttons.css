@@ -1,0 +1,63 @@
+.btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.75rem 1rem;
+  font-size: 0.875rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  transition: transform 0.5s ease-out;
+  border-radius: 0.4rem;
+  padding: 0.75rem 1rem;
+}
+
+.btn:hover {
+  transform: scale(1.05);
+  cursor: pointer;
+}
+
+.btn__blue {
+  background: #2a7ae4;
+  color: #fff;
+  border: none;
+}
+
+.btn__white {
+  width: 8.3125rem;
+  border: 1px solid #2a7ae4;
+  color: #2a7ae4;
+  background: transparent;
+}
+
+.btn__login {
+  width: 8.3125rem;
+}
+
+.btn__entrar {
+    width: 6.8125rem;
+  }
+
+@media screen and (min-width: 520px) {
+    .btn__login {
+      width: 10.375rem;
+    }
+  }
+  
+  @media screen and (min-width: 920px) {
+    .btn__login {
+      display: flex;
+      width: 11.375rem;
+      padding: 1rem;
+      justify-content: center;
+      align-items: center;
+      gap: 0.625rem;
+      flex-shrink: 0;
+      font-size: 1rem;
+      font-weight: 400;
+    }
+
+    .btn__entrar{
+        width: 100%;
+    }
+  }

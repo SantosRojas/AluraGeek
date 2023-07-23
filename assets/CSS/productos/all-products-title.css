@@ -1,0 +1,29 @@
+.all__products__title {
+  display: flex;
+  flex-direction: column;
+  margin: 1rem;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.btn__login{
+  display: none;
+}
+.productos__title{
+    display: none;
+}
+
+@media screen and (min-width: 520px) {
+    .all__products__title{
+      margin: 2rem 2rem 1rem 2rem;
+      flex-direction: row;
+    }
+  }
+  
+  @media screen and (min-width: 920px) {
+    .all__products__title{
+        width: 80%;
+        margin: 4rem auto 1rem auto;
+      }
+  }

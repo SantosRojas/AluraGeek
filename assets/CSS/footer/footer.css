@@ -1,5 +1,10 @@
-footer {
+.footer__container{
   display: flex;
+  flex-direction: column;
+}
+.footer {
+  display: flex;
+  flex-direction: column;
   padding: 2rem;
   justify-content: center;
   align-items: center;

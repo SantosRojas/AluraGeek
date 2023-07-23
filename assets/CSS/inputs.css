@@ -1,6 +1,3 @@
-.formulario{
-  width: 100%;
-}
 
 .form__label {
   margin-bottom: 1rem;
@@ -11,6 +8,7 @@
   position: relative;
   margin-bottom: 1rem;
   display: flex;
+  width: 100%;
   flex-direction: column;
   justify-content: flex-end;
   box-sizing: border-box;
@@ -28,7 +26,6 @@
 
 .input::placeholder {
   visibility: hidden;
-  color: #00000000;
 }
 
 .input:focus {
@@ -41,6 +38,7 @@
   left: 0.5rem;
   font-size: var(--font-size-input-label);
   transition: all 0.25s;
+  color: rgb(152, 152, 181);
 }
 
 .input:not(:placeholder-shown) + .input-label,
@@ -49,6 +47,7 @@
   top: 0.25rem;
   transition: all 0.25s;
   background-color: white;
+  color: #000;
 }
 
 .input-message-error {
@@ -57,7 +56,7 @@
 
 .textarea {
   box-sizing: border-box;
-  padding: 0.5rem;
+  padding: 1.5rem 0.5rem 0.5rem;
   border-radius: 7px;
   width: 100%;
   min-height: 3rem;
@@ -65,9 +64,12 @@
 }
 
 .textarea-container {
+  width: 100%;
   position: relative;
-  margin-top: 2rem;
   margin-bottom: 1rem;
+  width: 100%;
+  justify-content: flex-end;
+  box-sizing: border-box;
   font-weight: var(--font-weigth-input);
 }
 
@@ -81,21 +83,64 @@
 
 .textarea-label {
   position: absolute;
-  top: 0.5rem;
+  top: 1.375rem;
   left: 0.5rem;
   font-size: var(--font-size-input-label);
   transition: all 0.25s;
+  color: rgb(152, 152, 181);
 }
 
 .textarea:not(:placeholder-shown) + .textarea-label,
 .textarea:focus + .textarea-label {
   font-size: 0.875rem;
-  top: -1.25rem;
+  top: 0.25rem;
   transition: all 0.25s;
+  color: black;
 }
 
 .textarea-mensagem-error {
   display: none;
 }
 
+.select {
+  box-sizing: border-box;
+  border-bottom: 1px solid var(--secondary-color);
+  border-radius: 7px;
+  padding: 1.375rem 0.5rem 0.5rem;
+  height: 3.25rem;
+  width: 100%;
+  border: none;
+}
 
+.select:focus {
+  outline: none;
+}
+.select::placeholder{
+  visibility: hidden;
+}
+.select-label {
+  position: absolute;
+  top: 1.375rem;
+  left: 0.5rem;
+  font-size: var(--font-size-input-label);
+  transition: all 0.25s;
+  color: rgb(152, 152, 181);
+}
+
+/* .select:not(:placeholder-shown) + .select-label,
+.select:focus + .select-label {
+  font-size: 0.875rem;
+  top: 0.25rem;
+  transition: all 0.25s;
+  background-color: white;
+  color: #000;
+} */
+
+.select:focus + .select-label,
+.select:valid + .select-label {
+  font-size: 0.875rem;
+  top: 0.25rem;
+  transition: all 0.25s;
+  background-color: white;
+  color: #000;
+}

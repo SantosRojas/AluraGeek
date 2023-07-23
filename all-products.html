@@ -1,11 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>All Products</title>
-</head>
-<body>
-    
-</body>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&family=Open+Sans:wght@300;400;700&family=Raleway:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/CSS/reset.css" />
+    <link rel="stylesheet" href="assets/CSS/bases.css" />
+    <link rel="stylesheet" href="assets/CSS/inputs.css" />
+    <link rel="stylesheet" href="assets/CSS/buttons.css">
+    <link rel="stylesheet" href="assets/CSS/normalize.css" />
+    <link rel="stylesheet" href="assets/CSS/header/header-container.css" />
+    <link rel="stylesheet" href="assets/CSS/header/header-logo.css" />
+    <link rel="stylesheet" href="assets/CSS/header/header-btn-login.css" />
+    <link rel="stylesheet" href="assets/CSS/header/header-busqueda.css" />
+    <link rel="stylesheet" href="assets/CSS/banner/banner.css" />
+    <link rel="stylesheet" href="assets/CSS/banner/banner-text.css" />
+    <link
+      rel="stylesheet"
+      href="assets/CSS/productos/productos-container.css"
+    />
+    <link rel="stylesheet" href="assets/CSS/productos/productos-title.css" />
+    <link rel="stylesheet" href="assets/CSS/productos/productos-text.css" />
+    <link rel="stylesheet" href="assets/CSS/productos/productos-todo.css" />
+    <link rel="stylesheet" href="assets/CSS/productos/producto-unitario.css" />
+    <link rel="stylesheet" href="assets/CSS/nosotros/nosotros-links.css" />
+    <link rel="stylesheet" href="assets/CSS/nosotros/nosotros.css" />
+    <link rel="stylesheet" href="assets/CSS/nosotros/nosotros-container.css" />
+    <link rel="stylesheet" href="assets/CSS/nosotros/nosotros-logo.css" />
+    <link rel="stylesheet" href="assets/CSS/nosotros/nosotros-text.css" />
+    <link rel="stylesheet" href="assets/CSS/formulario/form-container.css" />
+    <link rel="stylesheet" href="assets/CSS/footer/footer.css" />
+    <link rel="stylesheet" href="assets/CSS/productos/all-products-title.css">
+  </head>
+  <body>
+    <header id="header"></header>
+
+    <div class="all__products__title">
+      <p class="productos__text">Todos los productos</p>
+      <a href="add-producto.html" class="productos__todo text--blue">
+        <button class="btn btn__blue">Agregar producto</button>
+      </a>
+    </div>
+
+    <div id="productos"></div>
+
+    <footer id="footer" class="footer__container"></footer>
+
+    <script src="controllers/index.js"></script>
+    <script>
+      loadFile("header", "views/header.html");
+      loadFile("productos", "views/productos.html");
+      loadFile("formulario", "views/formulario.html");
+      loadFile("nosotros", "views/nosotros.html");
+      loadFile("footer", "views/footer.html");
+    </script>
+  </body>
 </html>
