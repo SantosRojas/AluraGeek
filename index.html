@@ -18,7 +18,6 @@
     <link rel="stylesheet" href="assets/CSS/normalize.css" />
     <link rel="stylesheet" href="assets/CSS/header/header-container.css" />
     <link rel="stylesheet" href="assets/CSS/header/header-logo.css" />
-    <link rel="stylesheet" href="assets/CSS/header/header-btn-login.css" />
     <link rel="stylesheet" href="assets/CSS/header/header-busqueda.css" />
     <link rel="stylesheet" href="assets/CSS/banner/banner.css" />
     <link rel="stylesheet" href="assets/CSS/banner/banner-text.css" />
@@ -44,13 +43,119 @@
     <section id="banner" class="banner"></section>
     <div id="productos"></div>
     <footer id="footer"></footer>
-
     <script src="controllers/index.js"></script>
     <script>
       loadFile("header", "views/header.html");
       loadFile("banner","views/banner.html")
-      loadFile("productos","views/productos.html")
-      loadFile("formulario", "views/formulario.html");
+      const categories = {
+        "sw":"Star Wars",
+        "con":"Consolas",
+        "divss":"Diversos"
+      }
+      const products = [
+        {
+          "name":"Producto 1",
+          "category":"sw",
+          "price":"$ 60",
+          "url":"assets/images/sw-1.png"
+        },
+
+        {
+          "name":"Producto 2",
+          "category":"sw",
+          "price":"$ 700",
+          "url":"assets/images/sw-2.png"
+        },
+
+        {
+          "name":"Producto 3",
+          "category":"sw",
+          "price":"$ 80",
+          "url":"assets/images/sw-3.png"
+        },
+
+        {
+          "name":"Producto 4",
+          "category":"sw",
+          "price":"$ 90",
+          "url":"assets/images/sw-4.png"
+        },
+
+        {
+          "name":"Producto 1",
+          "category":"con",
+          "price":"$ 60",
+          "url":"assets/images/con-1.png"
+        },
+
+        {
+          "name":"Producto 2",
+          "category":"con",
+          "price":"$ 700",
+          "url":"assets/images/con-2.png"
+        },
+
+        {
+          "name":"Producto 3",
+          "category":"con",
+          "price":"$ 80",
+          "url":"assets/images/con-3.png"
+        },
+
+        {
+          "name":"Producto 4",
+          "category":"con",
+          "price":"$ 90",
+          "url":"assets/images/con-4.png"
+        },
+
+        {
+          "name":"Producto 1",
+          "category":"divss",
+          "price":"$ 60",
+          "url":"assets/images/control-consola.png"
+        },
+
+        {
+          "name":"Producto 2",
+          "category":"divss",
+          "price":"$ 700",
+          "url":"assets/images/control-consola1.png"
+        },
+
+        {
+          "name":"Producto 3",
+          "category":"divss",
+          "price":"$ 80",
+          "url":"assets/images/camisa-snes.png"
+        },
+
+        {
+          "name":"Producto 4",
+          "category":"divss",
+          "price":"$ 90",
+          "url":"assets/images/camisa-atari.png"
+        }
+      ]
+
+      const productos = document.getElementById("productos")
+
+      for (const category in categories){
+        const [prodTot,prodCont] = prodForCat(category,categories[category])
+        const prodFiltered = products.filter(product => product.category === category)
+        if (prodFiltered.length !=0){
+          for (let i = 0;i < prodFiltered.length; i++){
+          name = prodFiltered[i].name
+          price = prodFiltered[i].price
+          url = prodFiltered[i].url
+          prodCont.appendChild(createProduct(name, price, url))
+        }
+        }
+
+        productos.appendChild(prodTot)
+      }
+      
+      
       loadFile("footer", "views/footer.html");
     </script>
   </body>

@@ -30,13 +30,28 @@
   </head>
   <body>
     <header id="header"></header>
-    <div id="formulario" class="login"></div>
+    <div class="login">
+      <div id="form-login" class="login__container">
+        <p class="start__login">
+          Iniciar Sesion
+        </p>
+        <!-- Los inputs se agregaran de forma dinamica -->
+      </div>
+    </div class="login">
     <footer id="footer"></footer>
     <script src="controllers/index.js"></script>
     <script>
       loadFile("header", "views/header.html");
-      loadFile("formulario", "views/formulario.html");
       loadFile("footer", "views/footer.html");
+
+      const formContainer = document.getElementById("form-login");
+
+      formContainer.appendChild(createInput("email","email","Email"))
+      formContainer.appendChild(createInput("password","password","Password"))
+      const button_login = createSubmitButton("Entrar")
+      button_login.classList.add("entrar")
+      formContainer.appendChild(button_login)
+
     </script>
   </body>
 </html>

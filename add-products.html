@@ -81,6 +81,7 @@
       myForm.appendChild(createTextArea("messaje","Descripcion del producto"))
       // Agregamos el botón de submit dinámicamente al final del formulario
       myForm.appendChild(createSubmitButton("Agregar Producto"));
+      myForm.addEventListener("submit", submitForm);
     </script>
   </body>
 </html>

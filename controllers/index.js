@@ -45,7 +45,7 @@ function createSubmitButton(value) {
     return button;
 }
 
-function createSelect(id,placeholder) {
+function createSelect(id, placeholder) {
     var selectContainer = document.createElement("div");
     selectContainer.classList.add("input-container");
 
@@ -86,7 +86,7 @@ function createSelect(id,placeholder) {
 
     return selectContainer;
 }
- function createTextArea(id,placeholder,rows=5,cols=30){
+function createTextArea(id, placeholder, rows = 5, cols = 30) {
     var textareaContainer = document.createElement("div");
     textareaContainer.classList.add("textarea-container");
 
@@ -107,7 +107,7 @@ function createSelect(id,placeholder) {
     textareaContainer.appendChild(textarea);
     textareaContainer.appendChild(label);
     return textareaContainer;
- }
+}
 
 
 function submitForm(event) {
@@ -121,4 +121,94 @@ function submitForm(event) {
     return false;
 }
 
-document.getElementById("myForm").addEventListener("submit", submitForm);
+
+function createProduct(name, price, imageUrl) {
+    const productoUnitario = document.createElement('div');
+    productoUnitario.className = 'producto__unitario';
+
+    const productoImage = document.createElement('div');
+    productoImage.className = 'producto__image';
+
+    const img = document.createElement('img');
+    img.src = imageUrl;
+    img.alt = 'producto imagen';
+    productoImage.appendChild(img);
+
+    const a = document.createElement('a');
+    a.className = 'text--blue button';
+    a.href = 'producto-detalle.html';
+    a.textContent = 'Ver producto';
+    productoImage.appendChild(a);
+
+    productoUnitario.appendChild(productoImage);
+
+    const p = document.createElement('p');
+    p.textContent = name;
+    productoUnitario.appendChild(p);
+
+    const h4 = document.createElement('h4');
+    h4.className = 'producto__precio';
+    h4.textContent = price;
+    productoUnitario.appendChild(h4);
+
+    const a2 = document.createElement('a');
+    a2.className = 'text--blue';
+    a2.href = 'producto-detalle.html';
+    a2.textContent = 'Ver producto';
+    productoUnitario.appendChild(a2)
+
+    return productoUnitario;
+}
+
+// function prodForCat() {
+//     fetch("views/productos.html")
+//         .then(response => response.text())
+//         .then(data => {
+//             document.getElementById("productos").innerHTML = data;
+
+//             const contProd1 = document.getElementById("sw-container")
+//             const contProd2 = document.getElementById("con-container")
+//             const contProd3 = document.getElementById("divss-container")
+//             console.log(contProd1)
+
+//             contProd1.appendChild(createProduct("Producto1", "$60", "assets/images/sw-1.png"))
+//             contProd1.appendChild(createProduct("Producto2", "$80", "assets/images/sw-2.png"))
+//             contProd1.appendChild(createProduct("Producto3", "$50", "assets/images/sw-3.png"))
+//             contProd1.appendChild(createProduct("Producto4", "$90", "assets/images/sw-4.png"))
+//         });
+// }
+
+function prodForCat(category, name) {
+    const container = document.createElement('section');
+    container.className = 'container container--vertical';
+
+    const title = document.createElement('div');
+    title.className = 'productos__title';
+
+    const p = document.createElement('p');
+    p.className = 'productos__text';
+    p.textContent = name;
+    title.appendChild(p);
+
+    const a = document.createElement('a');
+    a.className = 'productos__todo text--blue';
+    a.href = 'all-products.html';
+    a.textContent = 'Ver todo';
+
+    const img = document.createElement('img');
+    img.src = 'assets/images/flecha.svg';
+    img.alt = 'ver todo';
+    img.className = 'arrow';
+    a.appendChild(img);
+
+    title.appendChild(a);
+    container.appendChild(title);
+
+    const categContainer = document.createElement('div');
+    categContainer.id = category;
+    categContainer.className = 'productos__container';
+
+    container.appendChild(categContainer);
+
+    return [container,categContainer];
+}
