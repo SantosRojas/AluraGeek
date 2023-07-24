@@ -1,4 +1,5 @@
 .all__products__title {
+  width: 100%;
   display: flex;
   flex-direction: column;
   margin: 1rem;
@@ -10,9 +11,7 @@
 .btn__login{
   display: none;
 }
-.productos__title{
-    display: none;
-}
+
 
 @media screen and (min-width: 520px) {
     .all__products__title{

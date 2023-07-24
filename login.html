@@ -17,7 +17,6 @@
     <link rel="stylesheet" href="assets/CSS/normalize.css" />
     <link rel="stylesheet" href="assets/CSS/header/header-container.css" />
     <link rel="stylesheet" href="assets/CSS/header/header-logo.css" />
-    <link rel="stylesheet" href="assets/CSS/header/header-btn-login.css" />
     <link rel="stylesheet" href="assets/CSS/header/header-busqueda.css" />
     <link rel="stylesheet" href="assets/CSS/banner/banner-text.css">
     <link rel="stylesheet" href="assets/CSS/login/login.css" />
@@ -39,18 +38,8 @@
       </div>
     </div class="login">
     <footer id="footer"></footer>
-    <script src="controllers/index.js"></script>
-    <script>
-      loadFile("header", "views/header.html");
-      loadFile("footer", "views/footer.html");
+    <script type="module" src="controllers/loadlogin.js"></script>
 
-      const formContainer = document.getElementById("form-login");
-
-      formContainer.appendChild(createInput("email","email","Email"))
-      formContainer.appendChild(createInput("password","password","Password"))
-      const button_login = createSubmitButton("Entrar")
-      button_login.classList.add("entrar")
-      formContainer.appendChild(button_login)
 
     </script>
   </body>

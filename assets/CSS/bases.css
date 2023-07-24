@@ -65,14 +65,14 @@ header {
 
 @media screen and (min-width: 520px) {
   .container{
-    padding: 2rem;
+    padding: 0 2rem;
   }
 }
 
 @media screen and (min-width: 920px) {
   .container{
     width: 80%;
-    margin: 4rem auto;
+    margin: 0 auto;
     padding: 0;
   }
 }

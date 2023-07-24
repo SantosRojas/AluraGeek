@@ -16,7 +16,6 @@
     <link rel="stylesheet" href="assets/CSS/normalize.css" />
     <link rel="stylesheet" href="assets/CSS/header/header-container.css" />
     <link rel="stylesheet" href="assets/CSS/header/header-logo.css" />
-    <link rel="stylesheet" href="assets/CSS/header/header-btn-login.css" />
     <link rel="stylesheet" href="assets/CSS/header/header-busqueda.css" />
     <link rel="stylesheet" href="assets/CSS/buttons.css" />
     <link rel="stylesheet" href="assets/CSS/login/login.css" />
@@ -66,22 +65,6 @@
     </div>
     <footer id="footer"></footer>
 
-    <script src="controllers/index.js"></script>
-    <script>
-      loadFile("header", "views/header.html");
-      loadFile("formulario", "views/formulario.html");
-      loadFile("footer", "views/footer.html");
-      // Accedemos al formulario
-      const myForm = document.getElementById("myForm");
-
-      //agregamos las entradas de informacion
-      myForm.appendChild(createInput("name", "text","Nombre del producto"));
-      myForm.appendChild(createInput("precio", "number", "Precio del producto"));
-      myForm.appendChild(createSelect("categoria","Seleccione una categoria"))
-      myForm.appendChild(createTextArea("messaje","Descripcion del producto"))
-      // Agregamos el botón de submit dinámicamente al final del formulario
-      myForm.appendChild(createSubmitButton("Agregar Producto"));
-      myForm.addEventListener("submit", submitForm);
-    </script>
+    <script type="module" src="controllers/loadaddproducts.js"></script>
   </body>
 </html>

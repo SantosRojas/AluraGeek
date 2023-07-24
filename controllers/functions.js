@@ -1,6 +1,7 @@
 // Functions
+import { products } from "./db.js"
 
-function loadFile(id, file) {
+export function loadFile(id, file) {
     fetch(file)
         .then(response => response.text())
         .then(data => {
@@ -8,7 +9,7 @@ function loadFile(id, file) {
         });
 }
 
-function createInput(id, type, placeholder) {
+export function createInput(id, type, placeholder) {
     const divContainer = document.createElement("div");
     divContainer.className = "input-container";
 
@@ -36,7 +37,7 @@ function createInput(id, type, placeholder) {
     return divContainer;
 }
 
-function createSubmitButton(value) {
+export function createSubmitButton(value) {
     const button = document.createElement("button");
     button.type = "submit";
     button.textContent = value;
@@ -45,7 +46,7 @@ function createSubmitButton(value) {
     return button;
 }
 
-function createSelect(id, placeholder) {
+export function createSelect(id, placeholder) {
     var selectContainer = document.createElement("div");
     selectContainer.classList.add("input-container");
 
@@ -86,7 +87,8 @@ function createSelect(id, placeholder) {
 
     return selectContainer;
 }
-function createTextArea(id, placeholder, rows = 5, cols = 30) {
+
+export function createTextArea(id, placeholder, rows = 5, cols = 30) {
     var textareaContainer = document.createElement("div");
     textareaContainer.classList.add("textarea-container");
 
@@ -110,7 +112,7 @@ function createTextArea(id, placeholder, rows = 5, cols = 30) {
 }
 
 
-function submitForm(event) {
+export function submitForm(event) {
     event.preventDefault();
 
     // Aquí puedes agregar la lógica para procesar los datos del formulario
@@ -122,7 +124,7 @@ function submitForm(event) {
 }
 
 
-function createProduct(name, price, imageUrl) {
+export function createProduct(name, price, imageUrl) {
     const productoUnitario = document.createElement('div');
     productoUnitario.className = 'producto__unitario';
 
@@ -160,29 +162,13 @@ function createProduct(name, price, imageUrl) {
     return productoUnitario;
 }
 
-// function prodForCat() {
-//     fetch("views/productos.html")
-//         .then(response => response.text())
-//         .then(data => {
-//             document.getElementById("productos").innerHTML = data;
 
-//             const contProd1 = document.getElementById("sw-container")
-//             const contProd2 = document.getElementById("con-container")
-//             const contProd3 = document.getElementById("divss-container")
-//             console.log(contProd1)
-
-//             contProd1.appendChild(createProduct("Producto1", "$60", "assets/images/sw-1.png"))
-//             contProd1.appendChild(createProduct("Producto2", "$80", "assets/images/sw-2.png"))
-//             contProd1.appendChild(createProduct("Producto3", "$50", "assets/images/sw-3.png"))
-//             contProd1.appendChild(createProduct("Producto4", "$90", "assets/images/sw-4.png"))
-//         });
-// }
-
-function prodForCat(category, name) {
+export function prodForCat(category, name, show_title = true) {
     const container = document.createElement('section');
     container.className = 'container container--vertical';
 
-    const title = document.createElement('div');
+    if (show_title){
+        const title = document.createElement('div');
     title.className = 'productos__title';
 
     const p = document.createElement('p');
@@ -203,6 +189,7 @@ function prodForCat(category, name) {
 
     title.appendChild(a);
     container.appendChild(title);
+    }
 
     const categContainer = document.createElement('div');
     categContainer.id = category;
@@ -210,5 +197,27 @@ function prodForCat(category, name) {
 
     container.appendChild(categContainer);
 
-    return [container,categContainer];
+    return [container, categContainer];
+}
+
+const categories = {
+    "sw": "Star Wars",
+    "con": "Consolas",
+    "divss": "Diversos"
+}
+
+
+export function printProducts({categorias = categories, show_title_category = true}) {
+    const productos = document.getElementById("productos")
+
+    for (const category in categorias) {
+        const [prodTot, prodCont] = prodForCat(category, categorias[category],show_title_category)
+        const prodFiltered = products.filter(product => product.category === category)
+        prodFiltered.forEach(product => {
+            const { name, price, url } = product
+            prodCont.appendChild(createProduct(name, price, url))
+        })
+
+        productos.appendChild(prodTot)
+    }
 }

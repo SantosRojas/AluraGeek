@@ -13,11 +13,10 @@
     <link rel="stylesheet" href="assets/CSS/reset.css" />
     <link rel="stylesheet" href="assets/CSS/bases.css" />
     <link rel="stylesheet" href="assets/CSS/inputs.css" />
-    <link rel="stylesheet" href="assets/CSS/buttons.css">
+    <link rel="stylesheet" href="assets/CSS/buttons.css" />
     <link rel="stylesheet" href="assets/CSS/normalize.css" />
     <link rel="stylesheet" href="assets/CSS/header/header-container.css" />
     <link rel="stylesheet" href="assets/CSS/header/header-logo.css" />
-    <link rel="stylesheet" href="assets/CSS/header/header-btn-login.css" />
     <link rel="stylesheet" href="assets/CSS/header/header-busqueda.css" />
     <link rel="stylesheet" href="assets/CSS/banner/banner.css" />
     <link rel="stylesheet" href="assets/CSS/banner/banner-text.css" />
@@ -36,29 +35,44 @@
     <link rel="stylesheet" href="assets/CSS/nosotros/nosotros-text.css" />
     <link rel="stylesheet" href="assets/CSS/formulario/form-container.css" />
     <link rel="stylesheet" href="assets/CSS/footer/footer.css" />
-    <link rel="stylesheet" href="assets/CSS/productos/all-products-title.css">
+    <link rel="stylesheet" href="assets/CSS/productos/all-products-title.css" />
+
+    <style>
+      #productos {
+        background-color: #f5f5f5;
+        display: flex;
+        flex-direction: column;
+      }
+
+      @media screen and (min-width: 520px) {
+        #productos {
+          gap: 2rem;
+          padding-bottom: 2rem;
+        }
+      }
+
+      @media screen and (min-width: 920px) {
+        #productos {
+          gap: 4rem;
+          padding-bottom: 4rem;
+        }
+      }
+    </style>
   </head>
   <body>
     <header id="header"></header>
-
-    <div class="all__products__title">
-      <p class="productos__text">Todos los productos</p>
-      <a href="add-producto.html" class="productos__todo text--blue">
-        <button class="btn btn__blue">Agregar producto</button>
-      </a>
+    <div style="background-color: #f5f5f5; display: flex">
+      <div class="all__products__title">
+        <p class="productos__text">Todos los productos</p>
+        <a href="add-products.html" class="productos__todo text--blue">
+          <button class="btn btn__blue">Agregar producto</button>
+        </a>
+      </div>
     </div>
 
     <div id="productos"></div>
 
     <footer id="footer" class="footer__container"></footer>
-
-    <script src="controllers/index.js"></script>
-    <script>
-      loadFile("header", "views/header.html");
-      loadFile("productos", "views/productos.html");
-      loadFile("formulario", "views/formulario.html");
-      loadFile("nosotros", "views/nosotros.html");
-      loadFile("footer", "views/footer.html");
-    </script>
+    <script type="module" src="controllers\loadallproducts.js"></script>
   </body>
 </html>
