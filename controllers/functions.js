@@ -124,7 +124,7 @@ export function submitForm(event) {
 }
 
 
-export function createProduct(name, price, imageUrl) {
+export function createProduct(id, name, price, imageUrl) {
     const productoUnitario = document.createElement('div');
     productoUnitario.className = 'producto__unitario';
 
@@ -133,13 +133,18 @@ export function createProduct(name, price, imageUrl) {
 
     const img = document.createElement('img');
     img.src = imageUrl;
+    img.style.borderRadius = ".3rem"
     img.alt = 'producto imagen';
     productoImage.appendChild(img);
 
     const a = document.createElement('a');
     a.className = 'text--blue button';
-    a.href = 'producto-detalle.html';
     a.textContent = 'Ver producto';
+    a.addEventListener('click', redirigirADetalles);
+    a.addEventListener('mouseover', function () {
+        this.style.cursor = "pointer"
+    })
+    a.dataset.pid = id;
     productoImage.appendChild(a);
 
     productoUnitario.appendChild(productoImage);
@@ -153,11 +158,6 @@ export function createProduct(name, price, imageUrl) {
     h4.textContent = price;
     productoUnitario.appendChild(h4);
 
-    const a2 = document.createElement('a');
-    a2.className = 'text--blue';
-    a2.href = 'producto-detalle.html';
-    a2.textContent = 'Ver producto';
-    productoUnitario.appendChild(a2)
 
     return productoUnitario;
 }
@@ -167,28 +167,28 @@ export function prodForCat(category, name, show_title = true) {
     const container = document.createElement('section');
     container.className = 'container container--vertical';
 
-    if (show_title){
+    if (show_title) {
         const title = document.createElement('div');
-    title.className = 'productos__title';
+        title.className = 'productos__title';
 
-    const p = document.createElement('p');
-    p.className = 'productos__text';
-    p.textContent = name;
-    title.appendChild(p);
+        const p = document.createElement('p');
+        p.className = 'productos__text';
+        p.textContent = name;
+        title.appendChild(p);
 
-    const a = document.createElement('a');
-    a.className = 'productos__todo text--blue';
-    a.href = 'all-products.html';
-    a.textContent = 'Ver todo';
+        const a = document.createElement('a');
+        a.className = 'productos__todo text--blue';
+        a.href = 'all-products.html';
+        a.textContent = 'Ver todo';
 
-    const img = document.createElement('img');
-    img.src = 'assets/images/flecha.svg';
-    img.alt = 'ver todo';
-    img.className = 'arrow';
-    a.appendChild(img);
+        const img = document.createElement('img');
+        img.src = 'assets/images/flecha.svg';
+        img.alt = 'ver todo';
+        img.className = 'arrow';
+        a.appendChild(img);
 
-    title.appendChild(a);
-    container.appendChild(title);
+        title.appendChild(a);
+        container.appendChild(title);
     }
 
     const categContainer = document.createElement('div');
@@ -207,17 +207,37 @@ const categories = {
 }
 
 
-export function printProducts({categorias = categories, show_title_category = true}) {
+export function printProducts({ categorias = categories, show_title_category = true }) {
     const productos = document.getElementById("productos")
 
     for (const category in categorias) {
-        const [prodTot, prodCont] = prodForCat(category, categorias[category],show_title_category)
+        const [prodTot, prodCont] = prodForCat(category, categorias[category], show_title_category)
         const prodFiltered = products.filter(product => product.category === category)
         prodFiltered.forEach(product => {
-            const { name, price, url } = product
-            prodCont.appendChild(createProduct(name, price, url))
+            const { id, name, price, url } = product
+            prodCont.appendChild(createProduct(id, name, price, url))
         })
 
         productos.appendChild(prodTot)
     }
+}
+
+export function redirigirADetalles(event) {
+    // Obtén el ID del producto desde el atributo "data-producto-id" del botón
+    const productoID = event.currentTarget.getAttribute('data-pid');
+    // Construye la URL de la página de detalles del producto con el ID
+    const urlDetallesProducto = `producto-detalle.html?id=${productoID}`;
+    // Redirige a la página de detalles del producto
+    window.location.href = urlDetallesProducto;
+}
+
+// Función para obtener el parámetro "id" de la URL
+export function getParameterByName(name, url) {
+    if (!url) url = window.location.href;
+    name = name.replace(/[\[\]]/g, '\\$&');
+    var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+        results = regex.exec(url);
+    if (!results) return null;
+    if (!results[2]) return '';
+    return decodeURIComponent(results[2].replace(/\+/g, ' '));
 }

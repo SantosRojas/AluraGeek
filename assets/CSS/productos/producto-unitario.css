@@ -30,6 +30,7 @@
   transition: opacity 0.3s ease; /* Transición suave */
   color: #fff;
   border-radius: 1rem;
+  text-align: center;
 }
 
 .producto__image:hover .button {
