@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="assets/CSS/reset.css" />
+    <link rel="stylesheet" href="assets/CSS/bases.css" />
+    <link rel="stylesheet" href="assets/CSS/inputs.css" />
+    <link rel="stylesheet" href="assets/CSS/buttons.css" />
+    <link rel="stylesheet" href="assets/CSS/normalize.css" />
+    <link rel="stylesheet" href="assets/CSS/header/header-container.css" />
+    <link rel="stylesheet" href="assets/CSS/header/header-logo.css" />
+    <link rel="stylesheet" href="assets/CSS/header/header-busqueda.css" />
+    <link rel="stylesheet" href="assets/CSS/banner/banner-text.css" />
+    <link
+      rel="stylesheet"
+      href="assets/CSS/productos/productos-container.css"
+    />
+    <link rel="stylesheet" href="assets/CSS/productos/productos-title.css" />
+    <link rel="stylesheet" href="assets/CSS/productos/productos-text.css" />
+    <link rel="stylesheet" href="assets/CSS/productos/productos-todo.css" />
+    <link rel="stylesheet" href="assets/CSS/productos/producto-unitario.css" />
+    <link rel="stylesheet" href="assets/CSS/nosotros/nosotros-links.css" />
+    <link rel="stylesheet" href="assets/CSS/nosotros/nosotros.css" />
+    <link rel="stylesheet" href="assets/CSS/nosotros/nosotros-container.css" />
+    <link rel="stylesheet" href="assets/CSS/nosotros/nosotros-logo.css" />
+    <link rel="stylesheet" href="assets/CSS/formulario/form-container.css" />
+    <link rel="stylesheet" href="assets/CSS/footer/footer.css" />
+    <link rel="stylesheet" href="assets/CSS/productos/producto-detalle.css">
+    <style>
+      @media screen and (min-width: 520px) {
+        #productos {
+          display: flex;
+          flex-direction: column;
+          gap: 2rem;
+          padding: 2rem 0;
+        }
+      }
+
+      @media screen and (min-width: 920px) {
+        #productos {
+          gap: 4rem;
+          padding: 4rem 0;
+        }
+      }
+    </style>
+</head>
+<body>
+    <header id="header"></header>
+    <div id="productos"></div>
+    <footer id="footer"></footer>
+    <script type="module" src="controllers/loadallpcategory.js"></script>
+</body>
+</html>

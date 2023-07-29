@@ -1,17 +1,14 @@
-import { loadFile, getParameterByName, printProducts} from "./functions.js";
-import { products } from "./db.js";
+import { loadFile, getParameterByName, printProducts, products} from "./functions.js";
+
 loadFile("header", "views/header.html");
 loadFile("footer", "views/footer.html");
 
 
 // Obtén el ID del producto de la URL
 const productoID = getParameterByName('id');
-console.log(typeof (productoID))
 var detalleProducto = products.find(function (objeto) {
     return objeto.id === productoID;
 });
-console.log(detalleProducto)
-
 
 // Muestra los detalles del producto en la página
 if (detalleProducto) {

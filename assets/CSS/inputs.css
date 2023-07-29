@@ -110,6 +110,7 @@
   height: 3.25rem;
   width: 100%;
   border: none;
+  background-color: white;
 }
 
 .select:focus {

@@ -1,5 +1,7 @@
 // Functions
-import { products } from "./db.js"
+import { listarProducts } from "../service/client-service.js";
+
+export const products = await listarProducts("http://localhost:3000/productos")
 
 export function loadFile(id, file) {
     fetch(file)
@@ -28,6 +30,7 @@ export function createInput(id, type, placeholder) {
 
     const errorMessage = document.createElement("span");
     errorMessage.className = "input-message-error";
+    errorMessage.style.color = "red"
     errorMessage.textContent = "Este campo no es válido";
 
     divContainer.appendChild(input);
@@ -112,18 +115,6 @@ export function createTextArea(id, placeholder, rows = 5, cols = 30) {
 }
 
 
-export function submitForm(event) {
-    event.preventDefault();
-
-    // Aquí puedes agregar la lógica para procesar los datos del formulario
-    // Por ejemplo, podrías obtener los valores de los campos y enviarlos a través de una solicitud AJAX o realizar alguna acción específica.
-
-    // Después de procesar los datos, puedes llamar a "event.preventDefault()" si deseas evitar que el formulario se envíe de forma tradicional.
-
-    return false;
-}
-
-
 export function createProduct(id, name, price, imageUrl) {
     const productoUnitario = document.createElement('div');
     productoUnitario.className = 'producto__unitario';
@@ -163,7 +154,7 @@ export function createProduct(id, name, price, imageUrl) {
 }
 
 
-export function prodForCat(category, name, show_title = true) {
+export function prodForCat(category, name, show_title = true, show_vermas = true) {
     const container = document.createElement('section');
     container.className = 'container container--vertical';
 
@@ -176,18 +167,24 @@ export function prodForCat(category, name, show_title = true) {
         p.textContent = name;
         title.appendChild(p);
 
-        const a = document.createElement('a');
-        a.className = 'productos__todo text--blue';
-        a.href = 'all-products.html';
-        a.textContent = 'Ver todo';
+        if (show_vermas) {
+            const a = document.createElement('a');
+            a.className = 'productos__todo text--blue';
+            a.dataset.todo = category
+            a.addEventListener('click', redirigirATodo);
+            a.addEventListener('mouseover', function () {
+                this.style.cursor = "pointer"
+            })
+            a.textContent = 'Ver todo';
 
-        const img = document.createElement('img');
-        img.src = 'assets/images/flecha.svg';
-        img.alt = 'ver todo';
-        img.className = 'arrow';
-        a.appendChild(img);
+            const img = document.createElement('img');
+            img.src = 'assets/images/flecha.svg';
+            img.alt = 'ver todo';
+            img.className = 'arrow';
+            a.appendChild(img);
 
-        title.appendChild(a);
+            title.appendChild(a);
+        }
         container.appendChild(title);
     }
 
@@ -200,18 +197,18 @@ export function prodForCat(category, name, show_title = true) {
     return [container, categContainer];
 }
 
-const categories = {
+export const categories = {
     "sw": "Star Wars",
     "con": "Consolas",
     "divss": "Diversos"
 }
 
 
-export function printProducts({ categorias = categories, show_title_category = true }) {
+export function printProducts({ categorias = categories, show_title_category = true ,show_vermas = true}) {
     const productos = document.getElementById("productos")
 
     for (const category in categorias) {
-        const [prodTot, prodCont] = prodForCat(category, categorias[category], show_title_category)
+        const [prodTot, prodCont] = prodForCat(category, categorias[category], show_title_category,show_vermas)
         const prodFiltered = products.filter(product => product.category === category)
         prodFiltered.forEach(product => {
             const { id, name, price, url } = product
@@ -227,6 +224,16 @@ export function redirigirADetalles(event) {
     const productoID = event.currentTarget.getAttribute('data-pid');
     // Construye la URL de la página de detalles del producto con el ID
     const urlDetallesProducto = `producto-detalle.html?id=${productoID}`;
+    // Redirige a la página de detalles del producto
+    window.location.href = urlDetallesProducto;
+}
+
+
+export function redirigirATodo(event) {
+    // Obtén el ID del producto desde el atributo "data-producto-id" del botón
+    const productoCategory = event.currentTarget.getAttribute('data-todo');
+    // Construye la URL de la página de detalles del producto con el ID
+    const urlDetallesProducto = `all-products-category.html?cat=${productoCategory}`;
     // Redirige a la página de detalles del producto
     window.location.href = urlDetallesProducto;
 }
