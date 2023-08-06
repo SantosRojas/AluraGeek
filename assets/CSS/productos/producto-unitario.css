@@ -36,3 +36,14 @@
 .producto__image:hover .button {
   opacity: 1; /* Mostrar el botón al pasar el cursor por encima */
 }
+
+.imagep{
+  width: 9.75rem;
+  height: 10.875rem;
+}
+
+@media screen and (min-width:520px) {
+  .imagep{
+    width: 11rem;
+  }  
+}

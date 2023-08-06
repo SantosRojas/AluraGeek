@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exito</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&family=Open+Sans:wght@300;400;700&family=Raleway:wght@300;400;700&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="../assets/CSS/reset.css" />
+    <link rel="stylesheet" href="../assets/CSS/bases.css" />
+    <link rel="stylesheet" href="../assets/CSS/inputs.css" />
+    <link rel="stylesheet" href="../assets/CSS/buttons.css" />
+    <style>
+        button{
+            width: 100%
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Contenedor del pop-up -->
+    <div class="overlay" id="overlay">
+        <div class="popup">
+            <h2>Producto editado</h2>
+            <p>Tu producto ha sido editado exitosamente.</p>
+            <div class="buttons">
+                <button onclick="closePopup()">Entendido</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+
+        function closePopup() {
+            window.location.href = "../all-products.html"
+        }
+
+    </script>
+</body>
+
+</html>

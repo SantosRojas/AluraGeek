@@ -1,99 +1,172 @@
 {
-    "productos":[
-        {
-            "id":"1",
-            "name":"Producto 1",
-            "category":"sw",
-            "price":"$ 60",
-            "url":"assets/images/sw-1.png"
-          },
-      
-          {
-            "id":"2",
-            "name":"Producto 2",
-            "category":"sw",
-            "price":"$ 700",
-            "url":"assets/images/sw-2.png"
-          },
-      
-          {
-            "id":"3",
-            "name":"Producto 3",
-            "category":"sw",
-            "price":"$ 80",
-            "url":"assets/images/sw-3.png"
-          },
-      
-          {
-            "id":"4",
-            "name":"Producto 4",
-            "category":"sw",
-            "price":"$ 90",
-            "url":"assets/images/sw-4.png"
-          },
-      
-          {
-            "id":"5",
-            "name":"Producto 1",
-            "category":"con",
-            "price":"$ 60",
-            "url":"assets/images/con-1.png"
-          },
-      
-          {
-            "id":"6",
-            "name":"Producto 2",
-            "category":"con",
-            "price":"$ 700",
-            "url":"assets/images/con-2.png"
-          },
-      
-          {
-            "id":"7",
-            "name":"Producto 3",
-            "category":"con",
-            "price":"$ 80",
-            "url":"assets/images/con-3.png"
-          },
-      
-          {
-            "id":"8",
-            "name":"Producto 4",
-            "category":"con",
-            "price":"$ 90",
-            "url":"assets/images/con-4.png"
-          },
-      
-          {
-            "id":"9",
-            "name":"Producto 1",
-            "category":"divss",
-            "price":"$ 60",
-            "url":"assets/images/control-consola.png"
-          },
-      
-          {
-            "id":"10",
-            "name":"Producto 2",
-            "category":"divss",
-            "price":"$ 700",
-            "url":"assets/images/control-consola1.png"
-          },
-      
-          {
-            "id":"11",
-            "name":"Producto 3",
-            "category":"divss",
-            "price":"$ 80",
-            "url":"assets/images/camisa-snes.png"
-          },
-      
-          {
-            "id":"12",
-            "name":"Producto 4",
-            "category":"divss",
-            "price":"$ 90",
-            "url":"assets/images/camisa-atari.png"
-          }
-    ]
+  "productos": [
+    {
+      "id": "1",
+      "name": "Producto 1",
+      "category": "sw",
+      "price": "80",
+      "url": "assets/images/sw-1.png",
+      "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book"
+    },
+    {
+      "id": "2",
+      "name": "Producto 2",
+      "category": "sw",
+      "price": "700",
+      "url": "assets/images/sw-2.png",
+      "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book"
+    },
+    {
+      "id": "3",
+      "name": "Producto 3",
+      "category": "sw",
+      "price": "100",
+      "url": "assets/images/sw-3.png",
+      "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book"
+    },
+    {
+      "id": "4",
+      "name": "Producto 4",
+      "category": "sw",
+      "price": "100",
+      "url": "assets/images/sw-4.png",
+      "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book"
+    },
+    {
+      "id": "5",
+      "name": "Producto 1",
+      "category": "con",
+      "price": "60",
+      "url": "assets/images/con-1.png",
+      "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book"
+    },
+    {
+      "id": "6",
+      "name": "Producto 2",
+      "category": "con",
+      "price": "700",
+      "url": "assets/images/con-2.png",
+      "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book"
+    },
+    {
+      "id": "7",
+      "name": "Producto 3",
+      "category": "con",
+      "price": "80",
+      "url": "assets/images/con-3.png",
+      "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book"
+    },
+    {
+      "id": "8",
+      "name": "Producto 4",
+      "category": "con",
+      "price": "100",
+      "url": "assets/images/con-4.png",
+      "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book"
+    },
+    {
+      "id": "9",
+      "name": "Producto 1",
+      "category": "divss",
+      "price": "60",
+      "url": "assets/images/control-consola.png",
+      "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book"
+    },
+    {
+      "id": "10",
+      "name": "Producto 2",
+      "category": "divss",
+      "price": "700",
+      "url": "assets/images/control-consola1.png",
+      "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book"
+    },
+    {
+      "id": "11",
+      "name": "Producto 3",
+      "category": "divss",
+      "price": "80",
+      "url": "assets/images/camisa-snes.png",
+      "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book"
+    },
+    {
+      "id": "12",
+      "name": "Producto 4",
+      "category": "divss",
+      "price": "90",
+      "url": "assets/images/camisa-atari.png",
+      "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book"
+    },
+    {
+      "id": "510b45fd-3b03-4288-b2b5-840432102278",
+      "name": "Maestro Yoda",
+      "category": "sw",
+      "price": "50",
+      "url": "https://promart.vteximg.com.br/arquivos/ids/853041-1000-1000/image-071dcbec16664ebbaa91885423ddd249.jpg?v=637523778574230000",
+      "description": "Muñeco de plastico del maestro Yoda"
+    },
+    {
+      "id": "97210bcf-6450-404e-acc7-893f9dc2cf33",
+      "name": "Consola White",
+      "category": "con",
+      "price": "2500",
+      "url": "https://www.cronista.com/files/image/448/448304/620e5af4089e4_700_387!.jpg?s=26f712f2f4529f87249440230d9369a4&d=1648835128",
+      "description": "Consola argentina blanca"
+    },
+    {
+      "id": "0675a252-0b16-425e-bdeb-530e2e66f243",
+      "name": "Nintendo SWitch",
+      "category": "con",
+      "price": "1000",
+      "url": "https://i0.wp.com/www.gamerfocus.co/wp-content/uploads/2020/09/image-37.png?resize=740%2C450&ssl=1",
+      "description": "COnsola super potente para jusgar tus mas emocionante juegos"
+    },
+    {
+      "id": "76fc1d22-4f0c-4d00-b9ba-dfb6a54950bf",
+      "name": "Casaca1",
+      "category": "divss",
+      "price": "150",
+      "url": "https://danaperu.com/wp-content/uploads/2022/05/Casacas-Acolchadas-Corporativas-32.jpg",
+      "description": "Casaca ploma super abrigadora"
+    },
+    {
+      "id": "16341acf-4d6c-49fe-b1b2-6441f4047769",
+      "name": "Casaca2",
+      "category": "divss",
+      "price": "160",
+      "url": "https://nonamepublicidad.com/wp-content/uploads/2020/07/casacas_acolchadas_ropa_industrial_noname_publicidad_ca0009.jpg",
+      "description": "Casaca para uso industrial"
+    },
+    {
+      "id": "c45829c3-201b-4ff6-978c-9cedc8ba1e6e",
+      "name": "Casaca3",
+      "category": "divss",
+      "price": "160",
+      "url": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fmakita.pe%2Fcategoria%2Fcasacas-termicas%2F&psig=AOvVaw2DcUFczrslLRu7w-YZ3rBD&ust=1691365183810000&source=images&cd=vfe&ved=0CBEQjRxqFwoTCJCuibrYxoADFQAAAAAdAAAAABAb",
+      "description": "Casaca marca makita"
+    },
+    {
+      "id": "82e6ce2c-0640-478c-a338-0a78352a3ab5",
+      "name": "Casaca4",
+      "category": "divss",
+      "price": "100",
+      "url": "https://mch.com.pe/cdn/shop/files/casaca-arrecife-re-verde-I23MCCS006VER-001_1200x1200.jpg?v=1686850062",
+      "description": "Casaca verde"
+    },
+    {
+      "id": "6807a9c6-ab7b-4db3-9190-84a1f976cd10",
+      "name": "POlo2",
+      "category": "divss",
+      "price": "125",
+      "url": "https://promart.vteximg.com.br/arquivos/ids/853041-1000-1000/image-071dcbec16664ebbaa91885423ddd249.jpg?v=637523778574230000",
+      "description": "FSFCSG VDFD"
+    },
+    {
+      "id": "2c46c710-7c4d-4396-af30-889b1ae61466",
+      "name": "Oso",
+      "category": "divss",
+      "price": "25",
+      "url": "https://media.istockphoto.com/id/887647864/es/foto/peluche-de-juguete-aislado-sobre-fondo-blanco.jpg?s=612x612&w=0&k=20&c=oKrCMYZXlacTBBJ5EUDdK7R1p2wGXm68xRZIf_AENLw=",
+      "description": "Oso de peluche"
+    }
+  ]
 }

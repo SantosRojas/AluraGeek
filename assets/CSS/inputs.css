@@ -52,6 +52,7 @@
 
 .input-message-error {
   display: none;
+  color: red;
 }
 
 .textarea {
@@ -98,8 +99,9 @@
   color: black;
 }
 
-.textarea-mensagem-error {
+.textarea-menssage-error {
   display: none;
+  color: red;
 }
 
 .select {

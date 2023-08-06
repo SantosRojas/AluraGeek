@@ -1,5 +1,5 @@
 // Functions
-import { listarProducts } from "../service/client-service.js";
+import { listarProducts,removeProduct } from "../service/client-service.js";
 
 export const products = await listarProducts("http://localhost:3000/productos")
 
@@ -8,7 +8,7 @@ export function loadFile(id, file) {
         .then(response => response.text())
         .then(data => {
             document.getElementById(id).innerHTML = data;
-        });
+        })
 }
 
 export function createInput(id, type, placeholder) {
@@ -64,15 +64,15 @@ export function createSelect(id, placeholder) {
     option1.selected = true;
 
     var option2 = document.createElement("option");
-    option2.value = "option1";
+    option2.value = "sw";
     option2.text = "Star Wars";
 
     var option3 = document.createElement("option");
-    option3.value = "option2";
+    option3.value = "con";
     option3.text = "Consolas";
 
     var option4 = document.createElement("option");
-    option4.value = "option3";
+    option4.value = "divss";
     option4.text = "Diversos";
 
     select.appendChild(option1);
@@ -124,16 +124,56 @@ export function createProduct(id, name, price, imageUrl) {
 
     const img = document.createElement('img');
     img.src = imageUrl;
-    img.style.borderRadius = ".3rem"
+    img.style.borderRadius = ".3rem";
     img.alt = 'producto imagen';
+    img.className = "imagep";
     productoImage.appendChild(img);
+
+    //Crear un contenedor para los iconos
+    const iconContainer = document.createElement('div');
+    iconContainer.className = "icon__container"
+    iconContainer.style.background = "#0056b3"
+    iconContainer.style.borderRadius = ".2rem"
+    iconContainer.style.marginTop = ".2rem"
+
+    //Crear el icono de eliminar
+    const deleteIcon = document.createElement('i');
+    deleteIcon.className = 'fas fa-trash-alt delete-icon';
+    deleteIcon.style.color = "white"
+    deleteIcon.style.marginRight = ".5rem"
+    deleteIcon.dataset.id = id
+    deleteIcon.addEventListener('click', confirmarEliminarProducto);
+    deleteIcon.addEventListener('mouseover', function () {
+        this.style.cursor = "pointer";
+    })
+    iconContainer.appendChild(deleteIcon);
+
+    //Crear el icono de editar
+    const editIcon = document.createElement('i');
+    editIcon.className = 'fas fa-edit edit-icon'; 
+    editIcon.style.color = "white"
+    editIcon.dataset.id = id
+    editIcon.addEventListener('click', editarProducto);
+    editIcon.addEventListener('mouseover', function () {
+        this.style.cursor = "pointer";
+    })
+    iconContainer.appendChild(editIcon);
+
+    // Estilos para posicionar los iconos y aumentar el espacio entre ellos
+    iconContainer.style.position = 'absolute';
+    iconContainer.style.top = '0';
+    iconContainer.style.right = '0';
+    iconContainer.style.padding = '5px';
+    iconContainer.style.marginRight = '10px'; // Aumentar el espacio entre los iconos
+
+    productoImage.appendChild(iconContainer);
 
     const a = document.createElement('a');
     a.className = 'text--blue button';
     a.textContent = 'Ver producto';
     a.addEventListener('click', redirigirADetalles);
     a.addEventListener('mouseover', function () {
-        this.style.cursor = "pointer"
+        this.style.cursor = "pointer";
     })
     a.dataset.pid = id;
     productoImage.appendChild(a);
@@ -146,11 +186,11 @@ export function createProduct(id, name, price, imageUrl) {
 
     const h4 = document.createElement('h4');
     h4.className = 'producto__precio';
-    h4.textContent = price;
+    h4.textContent = "$ " + price;
     productoUnitario.appendChild(h4);
 
-
     return productoUnitario;
+
 }
 
 
@@ -204,11 +244,11 @@ export const categories = {
 }
 
 
-export function printProducts({ categorias = categories, show_title_category = true ,show_vermas = true}) {
+export function printProducts({ categorias = categories, show_title_category = true, show_vermas = true }) {
     const productos = document.getElementById("productos")
 
     for (const category in categorias) {
-        const [prodTot, prodCont] = prodForCat(category, categorias[category], show_title_category,show_vermas)
+        const [prodTot, prodCont] = prodForCat(category, categorias[category], show_title_category, show_vermas)
         const prodFiltered = products.filter(product => product.category === category)
         prodFiltered.forEach(product => {
             const { id, name, price, url } = product
@@ -247,4 +287,23 @@ export function getParameterByName(name, url) {
     if (!results) return null;
     if (!results[2]) return '';
     return decodeURIComponent(results[2].replace(/\+/g, ' '));
+}
+
+function confirmarEliminarProducto(event) {
+    const confirmacion = window.confirm('¿Estás seguro de que deseas eliminar este producto?');
+
+    const iconoPulsado = event.target;
+    const idProducto = iconoPulsado.dataset.id;
+
+    if (confirmacion) {
+        removeProduct(idProducto).then( response => {
+            alert("Producto eliminado")
+        }).catch(err => console.log(err))
+    }
+}
+
+function editarProducto(event){
+    const iconoPulsado = event.target;
+    const idProducto = iconoPulsado.dataset.id;
+    window.location.href = `edit-products.html?id=${idProducto}`
 }
